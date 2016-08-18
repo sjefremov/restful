@@ -17,12 +17,14 @@ namespace WebApplication1.Controllers
         private DataContext db = new DataContext();
 
         // GET: api/Products
+        [HttpGet]
         public IQueryable<Product> GetProducts()
         {
             return db.Products;
         }
 
         // GET: api/Products/5
+        [HttpGet]
         [ResponseType(typeof(Product))]
         public IHttpActionResult GetProduct(int id)
         {
@@ -34,7 +36,7 @@ namespace WebApplication1.Controllers
 
             return Ok(product);
         }
-
+        [HttpPut]
         // PUT: api/Products/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutProduct(int id, Product product)
@@ -69,7 +71,7 @@ namespace WebApplication1.Controllers
 
             return StatusCode(HttpStatusCode.NoContent);
         }
-
+        [HttpPost]
         // POST: api/Products
         [ResponseType(typeof(Product))]
         public IHttpActionResult PostProduct(Product product)
@@ -84,7 +86,7 @@ namespace WebApplication1.Controllers
 
             return CreatedAtRoute("DefaultApi", new { id = product.ID }, product);
         }
-
+        [HttpDelete]
         // DELETE: api/Products/5
         [ResponseType(typeof(Product))]
         public IHttpActionResult DeleteProduct(int id)
