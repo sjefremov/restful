@@ -1,0 +1,11 @@
+D:\Users\code\Desktop\sJefremov\GitHub\restful\Sedc.ScheduleApi\Sedc.ScheduleApi.TestWinClient\bin\Debug\Sedc.ScheduleApi.TestWinClient.exe.config
+D:\Users\code\Desktop\sJefremov\GitHub\restful\Sedc.ScheduleApi\Sedc.ScheduleApi.TestWinClient\bin\Debug\Sedc.ScheduleApi.TestWinClient.exe
+D:\Users\code\Desktop\sJefremov\GitHub\restful\Sedc.ScheduleApi\Sedc.ScheduleApi.TestWinClient\bin\Debug\Sedc.ScheduleApi.TestWinClient.pdb
+D:\Users\code\Desktop\sJefremov\GitHub\restful\Sedc.ScheduleApi\Sedc.ScheduleApi.TestWinClient\bin\Debug\RestSharp.dll
+D:\Users\code\Desktop\sJefremov\GitHub\restful\Sedc.ScheduleApi\Sedc.ScheduleApi.TestWinClient\bin\Debug\RestSharp.xml
+D:\Users\code\Desktop\sJefremov\GitHub\restful\Sedc.ScheduleApi\Sedc.ScheduleApi.TestWinClient\obj\Debug\Sedc.ScheduleApi.TestWinClient.csprojResolveAssemblyReference.cache
+D:\Users\code\Desktop\sJefremov\GitHub\restful\Sedc.ScheduleApi\Sedc.ScheduleApi.TestWinClient\obj\Debug\Sedc.ScheduleApi.TestWinClient.Form1.resources
+D:\Users\code\Desktop\sJefremov\GitHub\restful\Sedc.ScheduleApi\Sedc.ScheduleApi.TestWinClient\obj\Debug\Sedc.ScheduleApi.TestWinClient.Properties.Resources.resources
+D:\Users\code\Desktop\sJefremov\GitHub\restful\Sedc.ScheduleApi\Sedc.ScheduleApi.TestWinClient\obj\Debug\Sedc.ScheduleApi.TestWinClient.csproj.GenerateResource.Cache
+D:\Users\code\Desktop\sJefremov\GitHub\restful\Sedc.ScheduleApi\Sedc.ScheduleApi.TestWinClient\obj\Debug\Sedc.ScheduleApi.TestWinClient.exe
+D:\Users\code\Desktop\sJefremov\GitHub\restful\Sedc.ScheduleApi\Sedc.ScheduleApi.TestWinClient\obj\Debug\Sedc.ScheduleApi.TestWinClient.pdb

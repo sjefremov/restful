@@ -1,0 +1,100 @@
+﻿<h2>Test Attendances</h2>
+
+<div class="form-group">
+    <label for="ddlCourses">Courses:</label>
+    <select class="form-control" id="ddlCourses"></select>
+    <br />
+
+    <label for="ddlSchedules">Schedules:</label>
+    <select class="form-control" id="ddlSchedules"></select>
+    <br />
+
+    <label for="ddlStudents">Students:</label>
+    <select class="form-control" id="ddlStudents"></select>
+    <br />
+
+    <button type="button" class="btn btn-default" id="btnAttend">Attend</button>
+</div>
+
+@section scripts
+{
+    <script>
+        function loadCourses() {
+            $.ajax("http://localhost:22751/api/course/", {
+                success: function (data) {
+                    $.each(data, function () {
+                        var ddlHtml = '<option value="' + this.id + '">' + this.name + "</option>";
+                        $("#ddlCourses").append(ddlHtml);
+                    });
+                    loadSchedules();
+                }
+            });
+        }
+
+        function loadSchedules() {
+            var selectedCourseItem = $("#ddlCourses option:selected");
+            var selectedCourseId = selectedCourseItem.val();
+            $.ajax("http://localhost:22751/api/course/" + selectedCourseId + "/schedules", {
+                success: function (dataSchedules) {
+                    $('#ddlSchedules').html("");
+                    $.each(dataSchedules, function () {
+                        var sDate = new Date(this.starting);
+                        var eDate = new Date(this.ending);
+                        var ddlHtml = '<option value="' + this.id + '">' + sDate.toLocaleTimeString() + '-' + eDate.toLocaleTimeString() + ', ' + sDate.toDateString() + "</option>";
+                        $("#ddlSchedules").append(ddlHtml);
+                    });
+                }
+            });
+        }
+
+        function loadStudents() {
+            $.ajax("http://localhost:22751/api/student/", {
+                success: function (data) {
+                    $.each(data, function () {
+                        var ddlHtml = '<option value="' + this.id + '">' + this.firstName + ' ' + this.lastName + "</option>";
+                        $("#ddlStudents").append(ddlHtml);
+                    });
+                    loadSchedules();
+                }
+            });
+        }
+
+        function createAttend() {
+            var selectedSchedule = $("#ddlSchedules option:selected");
+            var scheduleId = selectedSchedule.val();
+
+            var selectedStudent = $("#ddlStudents option:selected");
+            var studentId = selectedStudent.val();
+
+            var schedule =
+                {
+                    Id: 0,
+                    StudentId: studentId,
+                    ScheduleId: scheduleId,
+                };
+            var scheduleJson = JSON.stringify(schedule);
+
+            $.ajax({
+                type: "POST",
+                url: "http://localhost:22751/api/attendance/",
+                data: scheduleJson,
+                contentType: "application/json",
+                dataType: 'json',
+                complete: function(data) {
+                    alert(JSON.stringify(data));
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            loadCourses();
+            loadStudents();
+            $('#ddlCourses').on('change', function (e) {
+                loadSchedules();
+            });
+            $('#btnAttend').on('click', function (e) {
+                createAttend();
+            });
+        });
+    </script>
+}
