@@ -9,3 +9,14 @@ D:\Users\code\Desktop\sJefremov\GitHub\restful\Sedc.ScheduleApi\Sedc.ScheduleApi
 D:\Users\code\Desktop\sJefremov\GitHub\restful\Sedc.ScheduleApi\Sedc.ScheduleApi.TestWinClient\obj\Debug\Sedc.ScheduleApi.TestWinClient.csproj.GenerateResource.Cache
 D:\Users\code\Desktop\sJefremov\GitHub\restful\Sedc.ScheduleApi\Sedc.ScheduleApi.TestWinClient\obj\Debug\Sedc.ScheduleApi.TestWinClient.exe
 D:\Users\code\Desktop\sJefremov\GitHub\restful\Sedc.ScheduleApi\Sedc.ScheduleApi.TestWinClient\obj\Debug\Sedc.ScheduleApi.TestWinClient.pdb
+C:\Users\Стојанчо\Desktop\Stole\sedc-code-cademy\RestFullWebServices\Sedc.ScheduleApi\Sedc.ScheduleApi.TestWinClient\bin\Debug\Sedc.ScheduleApi.TestWinClient.exe.config
+C:\Users\Стојанчо\Desktop\Stole\sedc-code-cademy\RestFullWebServices\Sedc.ScheduleApi\Sedc.ScheduleApi.TestWinClient\obj\Debug\Sedc.ScheduleApi.TestWinClient.exe
+C:\Users\Стојанчо\Desktop\Stole\sedc-code-cademy\RestFullWebServices\Sedc.ScheduleApi\Sedc.ScheduleApi.TestWinClient\obj\Debug\Sedc.ScheduleApi.TestWinClient.pdb
+C:\Users\Стојанчо\Desktop\Stole\sedc-code-cademy\RestFullWebServices\Sedc.ScheduleApi\Sedc.ScheduleApi.TestWinClient\bin\Debug\Sedc.ScheduleApi.TestWinClient.exe
+C:\Users\Стојанчо\Desktop\Stole\sedc-code-cademy\RestFullWebServices\Sedc.ScheduleApi\Sedc.ScheduleApi.TestWinClient\bin\Debug\Sedc.ScheduleApi.TestWinClient.pdb
+C:\Users\Стојанчо\Desktop\Stole\sedc-code-cademy\RestFullWebServices\Sedc.ScheduleApi\Sedc.ScheduleApi.TestWinClient\bin\Debug\RestSharp.dll
+C:\Users\Стојанчо\Desktop\Stole\sedc-code-cademy\RestFullWebServices\Sedc.ScheduleApi\Sedc.ScheduleApi.TestWinClient\bin\Debug\RestSharp.xml
+C:\Users\Стојанчо\Desktop\Stole\sedc-code-cademy\RestFullWebServices\Sedc.ScheduleApi\Sedc.ScheduleApi.TestWinClient\obj\Debug\Sedc.ScheduleApi.TestWinClient.csprojResolveAssemblyReference.cache
+C:\Users\Стојанчо\Desktop\Stole\sedc-code-cademy\RestFullWebServices\Sedc.ScheduleApi\Sedc.ScheduleApi.TestWinClient\obj\Debug\Sedc.ScheduleApi.TestWinClient.Form1.resources
+C:\Users\Стојанчо\Desktop\Stole\sedc-code-cademy\RestFullWebServices\Sedc.ScheduleApi\Sedc.ScheduleApi.TestWinClient\obj\Debug\Sedc.ScheduleApi.TestWinClient.Properties.Resources.resources
+C:\Users\Стојанчо\Desktop\Stole\sedc-code-cademy\RestFullWebServices\Sedc.ScheduleApi\Sedc.ScheduleApi.TestWinClient\obj\Debug\Sedc.ScheduleApi.TestWinClient.csproj.GenerateResource.Cache
