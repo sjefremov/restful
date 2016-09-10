@@ -43,5 +43,32 @@ namespace Sedc.ScheduleApi.WebApi.Controllers
 
             return Ok();
         }
+
+        [HttpPut]
+        public IActionResult Edit([FromBody]AttendanceEditViewModel att)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var oldAttendances = _attRepository.FindBy(x => x.ScheduleId == att.ScheduleId);
+            if (oldAttendances.Any())
+            {
+                var deleteAttendances = oldAttendances.Select(a => a.StudentId).Except(att.StudentIds);
+                //TODO continue here...
+            }
+
+            Attendance newAtt = new Attendance
+            {
+                ScheduleId = att.ScheduleId,
+                StudentId = att.StudentId
+            };
+
+            _attRepository.Add(newAtt);
+            _attRepository.Commit();
+
+            return Ok();
+        }
     }
 }
