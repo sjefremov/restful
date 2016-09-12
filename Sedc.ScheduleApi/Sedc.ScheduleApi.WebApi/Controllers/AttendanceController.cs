@@ -3,6 +3,7 @@ using Sedc.ScheduleApi.Data.Abstract;
 using Sedc.ScheduleApi.Data.Repositories;
 using Sedc.ScheduleApi.Model.Entities;
 using Sedc.ScheduleApi.WebApi.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -52,21 +53,40 @@ namespace Sedc.ScheduleApi.WebApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            var oldAttendances = _attRepository.FindBy(x => x.ScheduleId == att.ScheduleId);
+            var oldAttendances = _attRepository
+                                    .FindBy(x => x.ScheduleId == att.ScheduleId)
+                                    .ToList();
             if (oldAttendances.Any())
             {
-                var deleteAttendances = oldAttendances.Select(a => a.StudentId).Except(att.StudentIds);
-                //TODO continue here...
+                var deleteStudents = oldAttendances
+                                            .Select(a => a.StudentId)
+                                            .Except(att.StudentIds)
+                                            .ToList();
+
+                if (deleteStudents.Any())
+                {
+                    _attRepository.DeleteWhere(a => a.ScheduleId == att.ScheduleId && deleteStudents.Contains(a.StudentId));
+                    _attRepository.Commit();
+                }
             }
 
-            Attendance newAtt = new Attendance
-            {
-                ScheduleId = att.ScheduleId,
-                StudentId = att.StudentId
-            };
+            var newStudents = att.StudentIds.Except(oldAttendances.Select(a => a.StudentId));
 
-            _attRepository.Add(newAtt);
-            _attRepository.Commit();
+            newStudents.ToList()
+                        .ForEach(sId => 
+                                        {
+                                            var newAtt = new Attendance
+                                            {
+                                                ScheduleId = att.ScheduleId,
+                                                StudentId = sId
+                                            };
+
+                                            _attRepository.Add(newAtt);
+
+                                        }
+                                );
+            
+           _attRepository.Commit();
 
             return Ok();
         }

@@ -15,6 +15,7 @@
     <br />
 
     <button type="button" class="btn btn-default" id="btnAttend">Attend</button>
+    <span id="responseInfo"></span>
 </div>
 
 @section scripts
@@ -102,27 +103,46 @@
             var selectedSchedule = $("#ddlSchedules option:selected");
             var scheduleId = selectedSchedule.val();
 
-            var selectedStudent = $("#ddlStudents option:selected");
-            var studentId = selectedStudent.val();
+            var selectedStudentIds = [];
 
-            var schedule =
+            $("#listStudents input:checked").each(function () {
+
+                var studentId = parseInt($(this).val());
+                selectedStudentIds.push(studentId);
+
+            });
+
+            var attendances =
                 {
-                    Id: 0,
-                    StudentId: studentId,
+                    StudentIds: selectedStudentIds,
                     ScheduleId: scheduleId,
                 };
-            var scheduleJson = JSON.stringify(schedule);
+            var attendancesJson = JSON.stringify(attendances);
 
             $.ajax({
-                type: "POST",
+                type: "PUT",
                 url: "http://localhost:22751/api/attendance/",
-                data: scheduleJson,
+                data: attendancesJson,
                 contentType: "application/json",
-                dataType: 'json',
-                complete: function(data) {
-                    alert(JSON.stringify(data));
+                complete: function (data, textStatus) {
+                    if (textStatus !== 'success') {
+                        $('#responseInfo').text('Some error occured: ' + textStatus);
+                        setTimeout(emptyResponseInfo, 3000);
+                    }
+                    else {
+                        $('#responseInfo').text('Successfully modified attendances!');
+                        setTimeout(emptyResponseInfo, 3000);
+                    }
+                },
+                error: function (data, textStatus, errorThrown) {
+                    $('#responseInfo').text('Some error occured: ' + textStatus + ' , ' + errorThrown);
+                    setTimeout(emptyResponseInfo, 3000);
                 }
             });
+
+            function emptyResponseInfo() {
+                $('#responseInfo').text('');
+            }
         }
 
         $(document).ready(function () {
